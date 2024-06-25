@@ -1,0 +1,1816 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Combo 1</title>
+        <meta charset='utf-8'/>
+        <style>
+ .ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ1 .cm-iso {unicode-bidi: isolate;}
+.ͼ1 .cm-announced {position: fixed; top: -10000px;}
+@media print {.ͼ1 .cm-announced {display: none;}}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; inset-inline-start: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace:before {content: attr(data-display); position: absolute; pointer-events: none; color: #888;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼt {color: var(--text-accent);}
+.ͼu {color: var(--text-accent-hover);}
+.ͼv {color: var(--text-faint);}
+.ͼw {color: var(--text-error);}
+.ͼx {color: var(--text-normal); background-color: var(--background-primary);}
+.ͼx .cm-content {caret-color: var(--text-normal);}
+.ͼx.cm-focused .cm-cursor {border-left-color: var(--text-normal);}
+.ͼx.cm-focused .cm-selectionBackground, .ͼx .cm-selectionBackground, .ͼx ::selection {background-color: var(--text-selection);}
+.ͼx .cm-activeLine {background-color: var(--background-primary);}
+.ͼx .cm-activeLineGutter {background-color: var(--background-primary);}
+.ͼx .cm-selectionMatch {background-color: var(--text-selection);}
+.ͼx .cm-gutters {background-color: var(--background-primary); color: var(--text-faint); border-right: 1px solid var(--background-modifier-border);}
+.ͼx .cm-lineNumbers, .ͼx .cm-gutterElement {color: inherit;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+ @keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.workspace-leaf-content[data-type="git-view"] .button-border {
+    border: 2px solid var(--interactive-accent);
+    border-radius: var(--radius-s);
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content {
+    padding: 0;
+}
+
+.workspace-leaf-content[data-type="git-history-view"] .view-content {
+    padding: 0;
+}
+
+.loading > svg {
+    animation: 2s linear infinite loading;
+    transform-origin: 50% 50%;
+    display: inline-block;
+}
+
+.obsidian-git-center {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+.obsidian-git-textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.obsidian-git-center-button {
+    display: block;
+    margin: 20px auto;
+}
+
+.tooltip.mod-left {
+    overflow-wrap: break-word;
+}
+
+.tooltip.mod-right {
+    overflow-wrap: break-word;
+}
+.git-tools {
+    display: flex;
+    margin-left: auto;
+}
+.git-tools .type {
+    padding-left: var(--size-2-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11px;
+}
+
+.git-tools .type[data-type="M"] {
+    color: orange;
+}
+.git-tools .type[data-type="D"] {
+    color: red;
+}
+.git-tools .buttons {
+    display: flex;
+}
+.git-tools .buttons > * {
+    padding: 0 0;
+    height: auto;
+}
+
+.git-author {
+    color: var(--text-accent);
+}
+
+.git-date {
+    color: var(--text-accent);
+}
+
+.git-ref {
+    color: var(--text-accent);
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-d-none {
+    display: none;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-wrapper {
+    text-align: left;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-header {
+    background-color: var(--background-primary);
+    border-bottom: 1px solid var(--interactive-accent);
+    font-family: var(--font-monospace);
+    height: 35px;
+    padding: 5px 10px;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-header,
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-stats {
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-lines-added {
+    border: 1px solid #b4e2b4;
+    border-radius: 5px 0 0 5px;
+    color: #399839;
+    padding: 2px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-lines-deleted {
+    border: 1px solid #e9aeae;
+    border-radius: 0 5px 5px 0;
+    color: #c33;
+    margin-left: 1px;
+    padding: 2px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-name-wrapper {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 15px;
+    width: 100%;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-name {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-wrapper {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 3px;
+    margin-bottom: 1em;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-collapse {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+    font-size: 12px;
+    justify-content: flex-end;
+    padding: 4px 8px;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-collapse.d2h-selected {
+    background-color: #c8e1ff;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-collapse-input {
+    margin: 0 4px 0 0;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-diff-table {
+    border-collapse: collapse;
+    font-family: Menlo, Consolas, monospace;
+    font-size: 13px;
+    width: 100%;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-files-diff {
+    width: 100%;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-diff {
+    overflow-y: hidden;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-side-diff {
+    display: inline-block;
+    margin-bottom: -8px;
+    margin-right: -4px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 50%;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-line {
+    padding: 0 8em;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-line,
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-line {
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-line {
+    padding: 0 4.5em;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-line-ctn {
+    word-wrap: normal;
+    background: none;
+    display: inline-block;
+    padding: 0;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    vertical-align: middle;
+    white-space: pre;
+    width: 100%;
+}
+
+.theme-light .workspace-leaf-content[data-type="diff-view"] .d2h-code-line del,
+.theme-light
+    .workspace-leaf-content[data-type="diff-view"]
+    .d2h-code-side-line
+    del {
+    background-color: #ffb6ba;
+}
+
+.theme-dark .workspace-leaf-content[data-type="diff-view"] .d2h-code-line del,
+.theme-dark
+    .workspace-leaf-content[data-type="diff-view"]
+    .d2h-code-side-line
+    del {
+    background-color: #8d232881;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-line del,
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-line ins,
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-line del,
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-line ins {
+    border-radius: 0.2em;
+    display: inline-block;
+    margin-top: -1px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.theme-light .workspace-leaf-content[data-type="diff-view"] .d2h-code-line ins,
+.theme-light
+    .workspace-leaf-content[data-type="diff-view"]
+    .d2h-code-side-line
+    ins {
+    background-color: #97f295;
+    text-align: left;
+}
+
+.theme-dark .workspace-leaf-content[data-type="diff-view"] .d2h-code-line ins,
+.theme-dark
+    .workspace-leaf-content[data-type="diff-view"]
+    .d2h-code-side-line
+    ins {
+    background-color: #1d921996;
+    text-align: left;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-line-prefix {
+    word-wrap: normal;
+    background: none;
+    display: inline;
+    padding: 0;
+    white-space: pre;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .line-num1 {
+    float: left;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .line-num1,
+.workspace-leaf-content[data-type="diff-view"] .line-num2 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 0.5em;
+    text-overflow: ellipsis;
+    width: 3.5em;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .line-num2 {
+    float: right;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-linenumber {
+    background-color: var(--background-primary);
+    border: solid var(--background-modifier-border);
+    border-width: 0 1px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    text-align: right;
+    width: 7.5em;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-linenumber:after {
+    content: "\200b";
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-linenumber {
+    background-color: var(--background-primary);
+    border: solid var(--background-modifier-border);
+    border-width: 0 1px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0 0.5em;
+    position: absolute;
+    text-align: right;
+    text-overflow: ellipsis;
+    width: 4em;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-diff-tbody tr {
+    position: relative;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-linenumber:after {
+    content: "\200b";
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-emptyplaceholder,
+.workspace-leaf-content[data-type="diff-view"] .d2h-emptyplaceholder {
+    background-color: var(--background-primary);
+    border-color: var(--background-modifier-border);
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-line-prefix,
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-linenumber,
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-linenumber,
+.workspace-leaf-content[data-type="diff-view"] .d2h-emptyplaceholder {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-linenumber,
+.workspace-leaf-content[data-type="diff-view"] .d2h-code-side-linenumber {
+    direction: rtl;
+}
+
+.theme-light .workspace-leaf-content[data-type="diff-view"] .d2h-del {
+    background-color: #fee8e9;
+    border-color: #e9aeae;
+}
+
+.theme-light .workspace-leaf-content[data-type="diff-view"] .d2h-ins {
+    background-color: #dfd;
+    border-color: #b4e2b4;
+}
+
+.theme-dark .workspace-leaf-content[data-type="diff-view"] .d2h-del {
+    background-color: #521b1d83;
+    border-color: #691d1d73;
+}
+
+.theme-dark .workspace-leaf-content[data-type="diff-view"] .d2h-ins {
+    background-color: rgba(30, 71, 30, 0.5);
+    border-color: #13501381;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-info {
+    background-color: var(--background-primary);
+    border-color: var(--background-modifier-border);
+    color: var(--text-normal);
+}
+
+.theme-light
+    .workspace-leaf-content[data-type="diff-view"]
+    .d2h-file-diff
+    .d2h-del.d2h-change {
+    background-color: #fdf2d0;
+}
+
+.theme-dark
+    .workspace-leaf-content[data-type="diff-view"]
+    .d2h-file-diff
+    .d2h-del.d2h-change {
+    background-color: #55492480;
+}
+
+.theme-light
+    .workspace-leaf-content[data-type="diff-view"]
+    .d2h-file-diff
+    .d2h-ins.d2h-change {
+    background-color: #ded;
+}
+
+.theme-dark
+    .workspace-leaf-content[data-type="diff-view"]
+    .d2h-file-diff
+    .d2h-ins.d2h-change {
+    background-color: rgba(37, 78, 37, 0.418);
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-list-wrapper {
+    margin-bottom: 10px;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-list-wrapper a {
+    color: #3572b0;
+    text-decoration: none;
+}
+
+.workspace-leaf-content[data-type="diff-view"]
+    .d2h-file-list-wrapper
+    a:visited {
+    color: #3572b0;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-list-header {
+    text-align: left;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-list-title {
+    font-weight: 700;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-list-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-list {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-list > li {
+    border-bottom: 1px solid var(--background-modifier-border);
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-list > li:last-child {
+    border-bottom: none;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-file-switch {
+    cursor: pointer;
+    display: none;
+    font-size: 10px;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-icon {
+    fill: currentColor;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-deleted {
+    color: #c33;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-added {
+    color: #399839;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-changed {
+    color: #d0b44c;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-moved {
+    color: #3572b0;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-tag {
+    background-color: var(--background-primary);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 10px;
+    margin-left: 5px;
+    padding: 0 2px;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-deleted-tag {
+    border: 2px solid #c33;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-added-tag {
+    border: 1px solid #399839;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-changed-tag {
+    border: 1px solid #d0b44c;
+}
+
+.workspace-leaf-content[data-type="diff-view"] .d2h-moved-tag {
+    border: 1px solid #3572b0;
+}
+
+/* ====================== Line Authoring Information ====================== */
+
+.cm-gutterElement.obs-git-blame-gutter {
+    /* Add background color to spacing inbetween and around the gutter for better aesthetics */
+    border-width: 0px 2px 0.2px 2px;
+    border-style: solid;
+    border-color: var(--background-secondary);
+    background-color: var(--background-secondary);
+}
+
+.cm-gutterElement.obs-git-blame-gutter > div,
+.line-author-settings-preview {
+    /* delegate text color to settings */
+    color: var(--obs-git-gutter-text);
+    font-family: monospace;
+    height: 100%; /* ensure, that age-based background color occupies entire parent */
+    text-align: right;
+    padding: 0px 6px 0px 6px;
+    white-space: pre; /* Keep spaces and do not collapse them. */
+}
+
+@media(max-width:800px){
+    /* hide git blame gutter not to superpose text */
+    .cm-gutterElement.obs-git-blame-gutter {
+        display: none;
+    }
+}
+ .text-snippets-class > * > textarea{
+    width:40em;
+    height: 100%;
+  }
+
+.text-snippets-class > * {
+  height: 100%;
+  width: 60em;
+}
+
+.text-snippets-class {
+  height: 70%;
+} /* lists and bullets */
+.outliner-plugin-better-lists .cm-s-obsidian .HyperMD-list-line {
+  padding-top: 0.4em;
+}
+
+.outliner-plugin-better-lists .cm-formatting-list-ul {
+  margin-right: 0.3em;
+}
+
+.outliner-plugin-better-lists .list-bullet::after {
+  width: 0.4em;
+  height: 0.4em;
+  background-color: var(--text-muted);
+}
+
+/* lines */
+.outliner-plugin-list-lines-scroller {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: var(--file-margins);
+  padding-left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.outliner-plugin-list-lines-content-container {
+  position: relative;
+}
+
+.outliner-plugin-list-line {
+  pointer-events: auto;
+  position: absolute;
+  width: 5px;
+  margin-left: 0.5ch;
+  margin-top: 1em;
+  z-index: 1;
+  cursor: pointer;
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--text-faint) 1px,
+    transparent 1px
+  );
+  background-position-x: 2px;
+  background-repeat: no-repeat;
+}
+
+.outliner-plugin-better-bullets .outliner-plugin-list-line {
+  margin-top: 1.4em;
+}
+
+.markdown-source-view.mod-cm6.is-readable-line-width
+  .outliner-plugin-list-lines-content-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.outliner-plugin-list-line:hover {
+  background: var(--text-faint);
+}
+
+.outliner-plugin-vertical-lines
+  .markdown-source-view.mod-cm6
+  .cm-hmd-list-indent
+  .cm-indent::before {
+  content: none;
+}
+
+/* drag-n-drop */
+.outliner-plugin-dropping-line {
+  background-color: hsla(var(--interactive-accent-hsl), 0.4);
+}
+
+.outliner-plugin-dragging-line {
+  opacity: 0.5;
+  background-color: hsla(var(--interactive-accent-hsl), 0.2);
+}
+
+.outliner-plugin-drop-zone {
+  width: 300px;
+  height: 4px;
+  background: var(--color-accent);
+  z-index: 999;
+  position: absolute;
+  pointer-events: none;
+}
+
+.outliner-plugin-drop-zone-padding {
+  position: absolute;
+  height: 4px;
+}
+
+body.outliner-plugin-dnd:not(.outliner-plugin-dragging) .cm-formatting-list,
+body.outliner-plugin-dnd:not(.outliner-plugin-dragging)
+  .cm-fold-indicator
+  .collapse-indicator {
+  cursor: grab !important;
+}
+
+html body.outliner-plugin-dnd.outliner-plugin-dragging {
+  cursor: grabbing !important;
+}
+ 
+.pandoc-plugin-error {
+    color: red;
+}
+ .rules-text-area {
+    width: 100%;
+    display: inline-block;
+}
+
+.rules-text-area .setting-item-info {
+    margin-bottom: 0.75rem;
+}
+
+.rules-text-area .setting-item-control {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.rules-editor-wrapper {
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.rules-editor-wrapper .cm-editor {
+    height: 20em;
+    resize: vertical;
+    overflow: auto;
+    font-size: var(--font-inputs);
+    text-align: left;
+    outline: none !important;
+}
+
+.rules-editor-wrapper .cm-editor,
+.cm-scroller {
+    border-radius: 4px;
+}
+
+
+.rules-editor-wrapper .cm-line,
+.rules-editor-wrapper .cm-lineNumbers {
+    font-family: var(--font-monospace);
+}
+
+
+.rules-profiles {
+    width: 100%;
+    display: flex;
+    
+}
+
+.rules-profile-button {
+    display: flex;
+    height: 40px;
+    min-width: 20px;
+    align-items: center;
+    padding: 0px 10px 12px 10px;
+    
+}
+
+.rules-profile-button svg {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.rules-profile-close {
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.rules-profile-button.selected {
+    background: var(--background-primary);
+    color: var(--text-on-accent); 
+}
+
+.rules-profile-button.clickable-icon {
+    margin: 0 5px;
+}
+
+.rules-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.rules-editor-validity {
+    display: flex;
+    align-items: center;
+}
+
+.rules-editor-validity-txt {
+    padding: 0.5em;
+    text-align: left;
+}
+
+.rules-editor-validity-indicator {
+    color: white;
+    display: inline-block;
+    border-radius: 1em;
+    padding: 0.1em;
+    margin-right: 1em;
+    cursor: default;
+    visibility: hidden;
+}
+
+
+.rules-editor-validity-indicator svg {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+
+.rules-editor-validity-indicator:hover {
+    color: white;
+}
+
+
+.rules-editor-validity-indicator.valid {
+    background-color: #7dc535;
+    visibility: visible;
+}
+
+
+.theme-dark .rules-editor-validity-indicator.valid {
+    background-color: #588b24;
+}
+
+
+.rules-editor-validity-indicator.invalid {
+    background-color: #ea5555;
+    visibility: visible;
+}
+  .CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+ .CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+ .CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+ 
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-stretchy-h > * {
+  display: table-cell;
+  width: 0;
+}
+
+mjx-stretchy-h > * > mjx-c {
+  display: inline-block;
+  transform: scalex(1.0000001);
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+  display: inline-block;
+  width: initial;
+}
+
+mjx-stretchy-h > mjx-ext {
+  /* IE */ overflow: hidden;
+  /* others */ overflow: clip visible;
+  width: 100%;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+  transform: scalex(500);
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c {
+  width: 0;
+}
+
+mjx-stretchy-h > mjx-beg > mjx-c {
+  margin-right: -.1em;
+}
+
+mjx-stretchy-h > mjx-end > mjx-c {
+  margin-left: -.1em;
+}
+
+mjx-stretchy-v {
+  display: inline-block;
+}
+
+mjx-stretchy-v > * {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-beg {
+  height: 0;
+}
+
+mjx-stretchy-v > mjx-end > mjx-c {
+  display: block;
+}
+
+mjx-stretchy-v > * > mjx-c {
+  transform: scaley(1.0000001);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  /* IE */ overflow: hidden;
+  /* others */ overflow: visible clip;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c::before {
+  width: initial;
+  box-sizing: border-box;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c {
+  transform: scaleY(500) translateY(.075em);
+  overflow: visible;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0px;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msub {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msubsup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-script {
+  display: inline-block;
+  padding-right: .05em;
+  padding-left: .033em;
+}
+
+mjx-script > mjx-spacer {
+  display: block;
+}
+
+mjx-munderover {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-munderover:not([limits="false"]) {
+  padding-top: .1em;
+}
+
+mjx-munderover:not([limits="false"]) > * {
+  display: block;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c1D446.TEX-I::before {
+  padding: 0.705em 0.645em 0.022em 0;
+  content: "S";
+}
+
+mjx-c.mjx-c2286::before {
+  padding: 0.636em 0.778em 0.138em 0;
+  content: "\2286";
+}
+
+mjx-c.mjx-c1D714.TEX-I::before {
+  padding: 0.443em 0.622em 0.011em 0;
+  content: "\3C9";
+}
+
+mjx-c.mjx-c1D45B.TEX-I::before {
+  padding: 0.442em 0.6em 0.011em 0;
+  content: "n";
+}
+
+mjx-c.mjx-cD7::before {
+  padding: 0.491em 0.778em 0 0;
+  content: "\D7";
+}
+
+mjx-c.mjx-c3A3::before {
+  padding: 0.683em 0.722em 0 0;
+  content: "\3A3";
+}
+
+mjx-c.mjx-c2217::before {
+  padding: 0.465em 0.5em 0 0;
+  content: "\2217";
+}
+
+mjx-c.mjx-c1D45A.TEX-I::before {
+  padding: 0.442em 0.878em 0.011em 0;
+  content: "m";
+}
+
+mjx-c.mjx-c27E8::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: "\27E8";
+}
+
+mjx-c.mjx-c1D460.TEX-I::before {
+  padding: 0.442em 0.469em 0.01em 0;
+  content: "s";
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c2C::before {
+  padding: 0.121em 0.278em 0.194em 0;
+  content: ",";
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c2026::before {
+  padding: 0.12em 1.172em 0 0;
+  content: "\2026";
+}
+
+mjx-c.mjx-c27E9::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: "\27E9";
+}
+
+mjx-c.mjx-c1D453.TEX-I::before {
+  padding: 0.705em 0.55em 0.205em 0;
+  content: "f";
+}
+
+mjx-c.mjx-c1D445.TEX-I::before {
+  padding: 0.683em 0.759em 0.021em 0;
+  content: "R";
+}
+
+mjx-c.mjx-c28::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: "(";
+}
+
+mjx-c.mjx-c47.TEX-C::before {
+  padding: 0.704em 0.595em 0.119em 0;
+  content: "G";
+}
+
+mjx-c.mjx-c29::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: ")";
+}
+
+mjx-c.mjx-c1D712.TEX-I::before {
+  padding: 0.442em 0.626em 0.204em 0;
+  content: "\3C7";
+}
+
+mjx-c.mjx-c2208::before {
+  padding: 0.54em 0.667em 0.04em 0;
+  content: "\2208";
+}
+
+mjx-c.mjx-c5B::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "[";
+}
+
+mjx-c.mjx-c1D441.TEX-I::before {
+  padding: 0.683em 0.888em 0 0;
+  content: "N";
+}
+
+mjx-c.mjx-c5D::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "]";
+}
+
+mjx-c.mjx-c220F.TEX-S1::before {
+  padding: 0.75em 0.944em 0.25em 0;
+  content: "\220F";
+}
+
+mjx-c.mjx-c221E::before {
+  padding: 0.442em 1em 0.011em 0;
+  content: "\221E";
+}
+
+mjx-c.mjx-c1D456.TEX-I::before {
+  padding: 0.661em 0.345em 0.011em 0;
+  content: "i";
+}
+
+mjx-c.mjx-c3D::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "=";
+}
+
+mjx-c.mjx-c1D45D.TEX-I::before {
+  padding: 0.442em 0.503em 0.194em 0;
+  content: "p";
+}
+
+mjx-c.mjx-c1D45F.TEX-I::before {
+  padding: 0.442em 0.451em 0.011em 0;
+  content: "r";
+}
+
+mjx-c.mjx-c2265::before {
+  padding: 0.636em 0.778em 0.138em 0;
+  content: "\2265";
+}
+
+mjx-c.mjx-c30::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "0";
+}
+
+mjx-c.mjx-c1D437.TEX-I::before {
+  padding: 0.683em 0.828em 0 0;
+  content: "D";
+}
+
+mjx-c.mjx-c1D43C.TEX-I::before {
+  padding: 0.683em 0.504em 0 0;
+  content: "I";
+}
+
+mjx-c.mjx-c1D44E.TEX-I::before {
+  padding: 0.441em 0.529em 0.01em 0;
+  content: "a";
+}
+ 
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Vector-Bold.woff") format("woff");
+}undefined
+</style>
+    </head>
+    <body>
+<ol dir="auto">
+<li dir="auto">Defina cuando un conjunto <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span> es llamado <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-recursivo (no hace falta que defina "función <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-recursiva")</li>
+<li dir="auto">Defina <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mo class="mjx-n"><mjx-c class="mjx-c27E8"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c27E9"></mjx-c></mjx-mo></mjx-math></mjx-container></span>  </li>
+<li dir="auto">Defina "<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> es una función <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-mixta"</li>
+<li dir="auto">Defina "familia <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-indexada de funciones"</li>
+<li dir="auto">Defina <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> </li>
+</ol>
+<hr dir="auto">
+<h3 data-heading="Defina cuando un conjunto $S\subseteq\omega^{n}\times\Sigma^{*m}$ es llamado $\Sigma$-recursivo" dir="auto">Defina cuando un conjunto <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span> es llamado <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-recursivo</h3>
+<p dir="auto">Un conjunto sera llamado <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> sera llamado <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-recursivo cuando la función <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msubsup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D712 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.323em; margin-left: 0px;"><mjx-texatom size="s" texclass="ORD"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup></mjx-texatom><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msubsup></mjx-math></mjx-container></span> sea <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-recursiva.</p>
+<h3 data-heading="Defina $\langle s_1,s_2\dots\rangle$" dir="auto">Defina <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mo class="mjx-n"><mjx-c class="mjx-c27E8"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c27E9"></mjx-c></mjx-mo></mjx-math></mjx-container></span></h3>
+<p dir="auto">Dada una infinitupla <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span>  usaremos <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mo class="mjx-n"><mjx-c class="mjx-c27E8"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c27E9"></mjx-c></mjx-mo></mjx-math></mjx-container></span> para denotar al numero  <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-munderover limits="false"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c220F TEX-S1"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.285em; margin-left: 0px;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c221E"></mjx-c></mjx-mi></mjx-texatom><mjx-spacer style="margin-top: 0.284em;"></mjx-spacer><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-munderover><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span>.</p>
+<h3 data-heading="Defina &quot;$f$ es una funcion $\Sigma$-mixta&quot;" dir="auto">Defina "<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> es una funcion <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-mixta"</h3>
+<p dir="auto">Sea <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span> un alfabeto finito. Dada una funcion <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> diremos que es <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-mixta si cumple las siguientes propiedades:<br>
+<strong>(M 1)</strong> Existen <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math></mjx-container></span>, tales que <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span><br>
+<strong>(M 2)</strong> Ya sea <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43C TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.064em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> o <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43C TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.064em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-script></mjx-msup></mjx-math></mjx-container></span> </p>
+<h3 data-heading="Defina &quot;familia $\Sigma$-indexada de funciones&quot;" dir="auto">Defina "familia <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-indexada de funciones"</h3>
+<p dir="auto">Dado un alfabeto <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>, una familia <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-indexada de funciones sera una funcion <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom></mjx-math></mjx-container></span> tal que <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span> y para cada <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub></mjx-math></mjx-container></span> se tiene que <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> es una funcion.</p>
+<h3 data-heading="Defina $R(f,\mathcal{G})$" dir="auto">Defina <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></h3>
+<h5 data-heading="NOTACIÓN" dir="auto">NOTACIÓN</h5>
+<p dir="auto">Si <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom></mjx-math></mjx-container></span> es una familia <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-indexada de funciones, entonces para <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span> escribiremos <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container></span> en lugar de <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></p>
+<ul dir="auto">
+<li dir="auto">
+<h4 data-heading="Recursion primitiva sobre variable numérica con valores alfabéticos" dir="auto">Recursion primitiva sobre variable numérica con valores alfabéticos</h4>
+Supongamos <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span> es un alfabeto finito. Sean entonces <span class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span> con <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> y  <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span> conjuntos no vacíos y sea <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom></mjx-math></mjx-container></span> una familia <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span> indexada de funciones tales que 
+<div class="math math-block is-loaded" dir="auto"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></div>
+para  <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>. Definamos 
+<div class="math math-block is-loaded" dir="auto"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></div>
+de la siguiente manera:</li>
+</ul>
+<ol dir="auto">
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D716 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span><br>
+Diremos que <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> es obtenida por recursion primitiva a partir de <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> y <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom></mjx-math></mjx-container></span></li>
+</ol>
+<ul dir="auto">
+<li dir="auto">
+<h4 data-heading="Recursion primitiva sobre variable alfabética con valores alfabéticos" dir="auto">Recursion primitiva sobre variable alfabética con valores alfabéticos</h4>
+Supongamos <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span> es un alfabeto finito. Sea
+<div class="math math-block is-loaded" dir="auto"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></div>
+con <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span>  y  <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span> conjuntos no vacíos y sea <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom></mjx-math></mjx-container></span> una familia <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>-indexada de funciones tal que  
+<div class="math math-block is-loaded" dir="auto"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D714 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></div>
+para cada <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi></mjx-math></mjx-container></span>. Definimos
+<div class="math math-block is-loaded" dir="auto"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.032em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-n"><mjx-c class="mjx-c3A3"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></div>
+de la siguiente manera</li>
+</ul>
+<ol dir="auto">
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D716 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c47 TEX-C"></mjx-c></mjx-mi></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.348em; margin-bottom: -0.516em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c20D7 TEX-V"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></li>
+</ol>
+    </body>
+</html>
