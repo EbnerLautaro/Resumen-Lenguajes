@@ -1,4 +1,4 @@
-# Combo 08
+# Combo 08 de Definiciones y convenciones notacionales
 1. Defina $M(P)$
 Sea $\Sigma$  un alfabeto finito y sea $P:D_{P}\subseteq\omega\times\omega^{n}\times\Sigma^{\ast m}\rightarrow\omega$  un predicado. Dado $(\vec{x},\vec{\alpha})\in\omega^{n}\times\Sigma^{\ast m}$, cuando exista al menos un $t\in\omega$  tal que $P(t,\vec{x},\vec{\alpha})=1$, usaremos $\min_{t}P(t,\vec{x},\vec{\alpha})$ para denotar al menor de tales $t^{\prime}s$.
 Definamos $$M(P)=\lambda\vec{x}\vec{\alpha}\left[\min\nolimits_{t}P(t,\vec{x},\vec{\alpha})\right]

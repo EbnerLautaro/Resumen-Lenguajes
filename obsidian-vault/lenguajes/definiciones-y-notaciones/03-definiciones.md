@@ -1,4 +1,4 @@
-# Combo 03
+# Combo 03 de Definiciones y convenciones notacionales
 1. Defina cuándo un conjunto $S\subseteq\omega^{n}\times\Sigma^{*m}$ es llamado $\Sigma$-recursivamente enumerable (no hace falta que defina “función $\Sigma$-recursiva)
 Diremos que un conjunto $S\subseteq\omega^{n}\times\Sigma^{\ast m}$ sera llamado $\Sigma$-recursivamente enumerable cuando sea vacio o haya una funcion $F:\omega\rightarrow\omega^{n}\times\Sigma^{\ast m}$ tal que $I_{F}=S$ y $F_{(i)}$ sea $\Sigma$-recursiva, para cada $i\in\{1,...,n+m\}$.
 

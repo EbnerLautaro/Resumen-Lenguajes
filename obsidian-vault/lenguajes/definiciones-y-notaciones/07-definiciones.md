@@ -1,4 +1,4 @@
-# Combo 07
+# Combo 07 de Definiciones y convenciones notacionales
 1. Defina cuándo una función $f:D_{f}\subseteq\omega^{n}\times\Sigma^{*m}\to\omega$  es llamada $\Sigma$-Turing computable y defina “la máquina de Turing $M$ computa a la función $f$”
 
 ---

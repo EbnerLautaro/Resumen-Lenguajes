@@ -1,4 +1,4 @@
-# Combo 10
+# Combo 10 de Definiciones y convenciones notacionales
 Defina relativo al lenguaje $S^{\Sigma}$:
 1. ”Estado”
 2. ”Descripcion instantanea”

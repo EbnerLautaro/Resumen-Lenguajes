@@ -1,4 +1,4 @@
-# Combo 09
+# Combo 09 de Definiciones y convenciones notacionales
 1. Defina “$I$ es una instrucción de $S^{\Sigma}$”
 Una instruccion basica de $\mathcal{S}^{\Sigma}$ es una palabra de $(\Sigma\cup\Sigma_{p})^{\ast}$ la cual es de alguna de las siguientes formas:
 	1. $\mathrm{N}\bar{k}\leftarrow\mathrm{N}\bar{k}+1$

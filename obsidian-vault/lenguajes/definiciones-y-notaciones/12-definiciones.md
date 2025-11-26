@@ -1,4 +1,4 @@
-# Combo 12
+# Combo 12 de Definiciones y convenciones notacionales
 1. Defina cuándo un conjunto $S\subseteq\omega^{n}\times\Sigma^{*m}$ es llamado $\Sigma$-computable, cuándo es llamado $\Sigma$-enumerable y defina “el programa $\mathcal{P}$ enumera a $S$”.
 
 --- 

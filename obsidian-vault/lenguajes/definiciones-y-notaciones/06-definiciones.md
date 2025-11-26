@@ -1,4 +1,4 @@
-# Combo 06
+# Combo 06 de Definiciones y convenciones notacionales
 1. Defina cuando un conjunto $S\subseteq\omega^{n}\times\Sigma^{\ast m}$ es llamado $\Sigma$-efectivamente enumerable y defina: "el procedimiento efectivo $P$ enumera a $S$"
 
 ---

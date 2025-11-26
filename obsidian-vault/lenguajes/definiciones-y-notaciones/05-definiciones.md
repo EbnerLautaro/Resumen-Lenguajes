@@ -1,4 +1,4 @@
-# Combo 05
+# Combo 05 de Definiciones y convenciones notacionales
 1. Defina cuando un conjunto $S\subseteq\omega^{n}\times\Sigma^{\ast m}$ es llamado $\Sigma$-efectivamente computable y defina “el procedimiento efectivo $P$ decide la pertenencia a $S$”
 
 --- 

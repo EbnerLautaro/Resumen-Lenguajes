@@ -1,4 +1,4 @@
-# Combo 11
+# Combo 11 de Definiciones y convenciones notacionales
 1. Defina $\Psi_{\mathcal{P}}^{n,m,\#}$
 Dado $\mathcal{P}\in\mathrm{Pro}^{\Sigma}$, definamos para cada par $n,m\geq0$, la funcion $\Psi_{\mathcal{P}}^{n,m,\#}$ de la siguiente manera:
 $$

@@ -1,4 +1,4 @@
-# Combo 04
+# Combo 04 de Definiciones y convenciones notacionales
 1. Defina cuando una funcion $f : Df\subseteq\omega^{n}\times\Sigma^{*m}\rightarrow\omega$  es llamada $Σ$-efectivamente computable y defina "el procedimiento $P$ computa a la funcion $f$ "
 
 ---

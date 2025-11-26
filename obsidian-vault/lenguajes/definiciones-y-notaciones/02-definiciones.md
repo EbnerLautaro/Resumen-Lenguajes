@@ -1,4 +1,4 @@
-# Combo 02
+# Combo 02 de Definiciones y convenciones notacionales
 1. Defina $d\overset{n}{\vdash}d'$ (no hace falta definir $\vdash$ )
 Para $d,d^{\prime}\in Des$ y $n\geq0$, escribiremos $d\overset{n}{\vdash}d^{\prime}$ si existen d$_{1},...,d_{n+1}\in Des$ tales que 
 $$

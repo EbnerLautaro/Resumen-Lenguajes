@@ -1,4 +1,4 @@
-# Combo 01 
+# Combo 01 de Definiciones y convenciones notacionales
 1. Defina cuando un conjunto $S\subseteq\omega^{n}\times\Sigma^{*m}$ es llamado $Σ-recursivo$ (no hace falta que defina ”funcion $Σ-recursiva$”)
 Un conjunto $S\subseteq\omega^{n}\times\Sigma^{*m}$ $\Sigma-recursivo$ si y solo si su función característica: $\chi_{S}^{\omega^{n}\times\Sigma^{*m}}$ es $\Sigma-recursiva$
 
