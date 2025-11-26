@@ -1,9 +1,6 @@
 # Resumen Lenguajes
 Repositorio de la materia Lenguajes Formales y Computabilidad de 4to año de Lic. Ciencias de la Computacion (FAMAF)
 
-## Carátulas
-Evidentemente generadas por IA!!
-
 <table>
   <tr>
     <td><img src="caratulas/1.png" width="300"/></td>
